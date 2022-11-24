@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.rubik{
+    font-family: 'Rubik', sans-serif;
+}
+
+.montserrat {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.josephin {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-self: end;
+    position: relative;
+    padding: 0;
+    margin: 0% 0% 5% 50rem;
+    width: 25rem;
+    height: 25rem;
+}
+
+.card {
+    min-width: 64vh;
+    min-height: 18vh;
+    width: 60rem;
+    height: 25rem;
+    display: flexbox;
+    position: relative;
+    background: linear-gradient(to bottom left, #f0d632, #fb03ff); /*#5c9975*/
+    box-shadow: 1px, 1px 1px rgba(0,0,0,.3);
+    background: cover;
+    padding: 3vh;
+    margin: 0vh 1vh 1vh 0vh;
+    border-width: 0;
+}
+
+.front-face,
+.back-face {
+  border-radius: 30px;
+  backface-visibility: hidden;
+}
+
+.profile-picture {
+    border-radius: 50%;
+    width: 10rem;
+    height: 10rem;
+    object-fit: cover;
+    transition-duration: 300ms;
+}
+
+.profile-picture:hover {
+    border-radius: 13px;
+}
+
+.description {
+    display: flexbox;
+    position: relative;
+    justify-content: space-around;
+    width: inherit;
+    height: inherit;
+}
+
+.basic-info {
+    font-family: 'Lora', serif;
+    height: 50%;
+}
+
+.description {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.buttons {
+    display: flexbox;
+    align-items: end;
+    justify-items: end;
+}
+
+.button {
+    transition-duration: 150ms;
+}
+
+.button:hover {
+    background: rgb(234, 159, 8);
+    }
+
+.button-text {
+    color: rgb(234 179 8);
+}
+
+.button:hover .button-text{
+    color: rgb(13 148 136);
+}
+
+.LinkedIn {
+    background-color: #1881ba;
+    font-family: 'Josefin Sans', sans-serif;
+    color: white;
+    text-align: center;
+    justify-content: center;
+}
+
+.GitHub {
+    background-color: black;
+}
+
+.logo { /*"https://pngimg.com/uploads/linkedIn/linkedIn_PNG27.png"*/
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    transition-duration: 150ms;
+}
+
+.logo:hover {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.trophies {
+    width: 100%;
+    height: 50%;
+    display: flex;
+}
+
+img.trophy {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    position: relative;
+    margin-top: 3rem;
+}
+
