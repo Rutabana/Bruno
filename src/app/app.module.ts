@@ -7,7 +7,12 @@ import { AlertModule } from "ngx-bootstrap/alert";
 
 @NgModule({
     declarations: [AppComponent],
-    imports: [AlertModule.forRoot(), BrowserModule, CardModule, AppRoutingModule],
+    imports: [
+        AlertModule.forRoot(), 
+        BrowserModule, 
+        CardModule, 
+        AppRoutingModule,
+    ],
     bootstrap: [AppComponent],
 })
 export class AppModule {}
