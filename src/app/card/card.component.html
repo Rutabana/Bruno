@@ -1,4 +1,3 @@
-
 <div class="w-100 h-100 flex flex-col absolute ml-10">
     <div class="container ml-75 p-0">
         <div class="card front-face bg-teal-800 flex-row">
@@ -6,12 +5,25 @@
                 <img class="profile-picture mb-3" src="https://www.denofgeek.com/wp-content/uploads/2020/10/spider-man-into-the-spider-verse-suit.jpeg?resize=1024,577"/>
                 <span>🔥</span><span class="streak">Streak</span>
             </div>
-            <div class="bg-teal-500 w-2/6 rounded-lg w-50 h-24 ml-1" >
+            <div class="bg-teal-500 w-2/6 rounded-lg w-50 h-1/2 ml-1" >
                 <p class="rubik font-bold justify-center flex text-teal-700 text-xl">Timer</p>
-                <span class="flex justify-center pt-2 pb-1 text-white rubik">{{minutes}}:{{seconds}}</span>
-                <a class="bg-teal-600 button rounded h-30 justify-center flex rubik font-bold m-1" (click)="pauseTimer()" href="">
-                    <span class="button-text">Reset</span>
-                </a>
+                <div class="flex justify-center">
+                    <span class="flex justify-center pt-2 pb-1 text-white rubik">
+                        <input class="time-fields ml-1" type="number" id="minutes-field" (focus)="clearInterval()" onblur="this.minutes=''" [(ngModel)]="s_minutes" min="0" max="59">
+                        <input class="time-fields" type="number" id="seconds-field" (focus)="clearInterval()" onblur="this.seconds=''" [(ngModel)]="s_seconds" min="0" max="59">
+                    </span>
+                    <button class="bg-teal-600 button button-text mt-2 rounded w-1/6 justify-center flex rubik font-bold m-1" (click)="changeTimer()">
+                        <span class="button-text">Ok</span>
+                    </button>
+                </div>
+                <div class="flex mx-1">
+                    <button class="bg-teal-600 button rounded w-40 h-30 justify-center flex rubik font-bold m-1" (click)="resetTimer()">
+                        <span class="button-text">Reset</span>
+                    </button>
+                    <button class="bg-teal-600 button rounded w-40 h-30 justify-center flex rubik font-bold m-1" (click)="pauseTimer()">
+                        <span class="button-text">Pause</span>
+                    </button>
+                </div>
             </div>
         <!-- <div>   
             <div class="card front-face">
@@ -49,3 +61,4 @@
     </div>
     <!-- <img class="background" src="https://c4.wallpaperflare.com/wallpaper/442/48/995/totoro-art-illust-simple-wallpaper-preview.jpg"/> -->
 </div>
+<script src="card.component.ts"></script>

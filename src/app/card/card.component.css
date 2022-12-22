@@ -101,6 +101,37 @@
     color: rgb(13 148 136);
 }
 
+.focused {
+    background-color: rgb(13 148 136);
+}
+
+.time-fields {
+    background-color: rgb(13 148 136);
+    width: 4rem;
+    height: 1.5rem;
+    text-align: center;
+}
+
+/*Removes arrows from number input fields on Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/*Removes arrows from number input fields on Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+#minutes-field {
+    border-radius: 0.3rem 0rem 0rem 0.3rem;
+}
+
+#seconds-field {
+    border-radius: 0rem 0.3rem 0.3rem 0rem;
+}
+
 .LinkedIn {
     background-color: #1881ba;
     font-family: 'Josefin Sans', sans-serif;
@@ -125,7 +156,7 @@
     height: 2.5rem;
 }
 
-a {
+button {
     display: flex;
     align-items: center;
     justify-content: center;

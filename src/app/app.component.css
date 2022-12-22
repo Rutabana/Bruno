@@ -45,6 +45,7 @@ nav {
     width: 30vw;
     border-radius: 0.5rem 1rem 1rem 0.5rem;
     transition-duration: 0.3s;
+    top: 10%;
 }
 
 #sidebar:hover {

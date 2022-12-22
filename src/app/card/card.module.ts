@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardService } from './card.service';
 import { CardComponent } from './card.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -9,7 +10,8 @@ import { CardComponent } from './card.component';
   declarations: [CardComponent],
   providers: [CardService],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   exports: [CardComponent],
 })
