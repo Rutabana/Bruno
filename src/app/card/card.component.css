@@ -16,12 +16,15 @@
 
 .container {
     display: flex;
-    align-self: end;
-    position: relative;
+    justify-content: end;
+    position: absolute;
     padding: 0;
     margin: 0% 5% 5% 0%;
-    width: 25rem;
-    height: 25rem;
+    left: 50rem;
+    width: 30vw;
+    height: 30vh;
+    min-width: 25rem;
+    min-height: 25rem;
 }
 
 .card {

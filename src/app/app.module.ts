@@ -4,9 +4,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CardModule } from './card/card.module';
 import { AlertModule } from "ngx-bootstrap/alert";
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
-    declarations: [AppComponent],
+    declarations: [AppComponent, SidebarComponent],
     imports: [
         AlertModule.forRoot(), 
         BrowserModule, 

@@ -7,18 +7,12 @@ import { CardService } from './card.service';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent implements OnInit {
-  name = '';
-  age = 0;
-  gender = '';
-  image = '';
-  bio = '';
-  contactInfo = [''];
 
   constructor(private cardService: CardService) { }
   minutes = 30;
   seconds = 0;
-  s_minutes = "0".concat(new Number(this.minutes).toString()).slice(-2);
-  s_seconds = "0".concat(new Number(this.seconds).toString()).slice(-2);
+  s_minutes = ("0" + this.minutes).slice(-2);
+  s_seconds = ("0" + this.seconds).slice(-2);
   interval: any;
   play = false;
   user_minutes = 0;
@@ -26,6 +20,7 @@ export class CardComponent implements OnInit {
 
   ngOnInit(): void {
     this.startTimer();
+    this.registerDragElement();
   }
 
   startTimer(minutes = this.minutes, seconds = this.seconds) {
@@ -70,7 +65,7 @@ export class CardComponent implements OnInit {
   resetTimer() {
     clearInterval(this.interval);
     this.minutes = this.user_minutes;
-    this.seconds = this.user_seconds;
+    this.seconds = this.user_seconds + 1;
     this.startTimer(this.minutes, this.seconds);
   }
 
@@ -88,4 +83,56 @@ export class CardComponent implements OnInit {
     clearInterval(this.interval);
   }
 
+  // Make Card Draggable
+  private registerDragElement() {
+    const elmnt = <HTMLDivElement>document.getElementById('card');
+  
+    let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  
+    const dragMouseDown = (e: MouseEvent) => {
+      
+      e = e || window.event;
+      // get the mouse cursor position at startup:
+      pos3 = e.clientX;
+      pos4 = e.clientY;
+
+      document.onmouseup = closeDragElement;
+      // call a function whenever the cursor moves:
+      document.onmousemove = elementDrag;
+    };
+  
+    const elementDrag = (e: MouseEvent) => {
+      e = e || window.event;
+      // calculate the new cursor position:
+      pos1 = pos3 - e.clientX;
+      pos2 = pos4 - e.clientY;
+      pos3 = e.clientX;
+      pos4 = e.clientY;
+      // set the element's new position:
+      elmnt.style.top = elmnt.offsetTop - pos2 + 'px';
+      elmnt.style.left = elmnt.offsetLeft - pos1 - 40 + 'px';
+    };
+  
+    const closeDragElement = () => {
+      /* stop moving when mouse button is released:*/
+      document.onmouseup = null;
+      document.onmousemove = null;
+    };
+  
+    elmnt.onmousedown = dragMouseDown;
+  }
+  
+  public allowDrop(ev: DragEvent): void {
+    ev.preventDefault();
+  }
+  
+  public drag(ev: DragEvent): void {
+    ev?.dataTransfer?.setData("text", (<HTMLDivElement>ev?.target).id);
+  }
+  
+  public drop(ev: DragEvent, elementId: string): void {
+    ev.preventDefault();
+    var data = ev?.dataTransfer?.getData("text") || elementId;
+    (<HTMLDivElement>ev.target).appendChild(<HTMLDivElement>document.getElementById(data));
+  }
 }
