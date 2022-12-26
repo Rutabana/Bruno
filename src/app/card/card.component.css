@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 .rubik{
     font-family: 'Rubik', sans-serif;
 }
@@ -12,6 +13,13 @@
 
 .josephin {
     font-family: 'Josefin Sans', sans-serif;
+}
+
+.whole {
+    top: 2vh;
+    min-width: 25vw;
+    min-height: 25vh;
+    z-index: 0;
 }
 
 .container {
@@ -42,7 +50,7 @@
 
 .front-face,
 .back-face {
-  border-radius: 30px;
+  border-radius: 2rem;
   backface-visibility: hidden;
 }
 

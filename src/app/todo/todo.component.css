@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.rubik{
+    font-family: 'Rubik', sans-serif;
+}
+
+.montserrat {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.josephin {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.container {
+    top: 50vh;
+    display: block;
+    background: rgb(214, 234, 145);
+    border-radius: 2rem;
+    position: absolute;
+    padding: 0;
+    margin: 0% 5% 5% 0%;
+    left: 50rem;
+    width: 25vw;
+    height: 50vh;
+    padding: 2%;
+    overflow: hidden;
+}
+
+.title {
+    font-size: x-large;
+    text-align: center;
+    margin: 3%;
+    font-weight: 800;
+    color: teal;
+}
+
+.add {
+    width: 100%;
+    color: grey;
+    text-align: left;
+    padding: 0px 2px 2px 4px;
+    background-color: rgb(162, 176, 113);
+    border-radius: 4px;
+    transition-duration: 250ms;
+    transition-timing-function: ease-out;
+}
+
+.add:hover {
+    background-color: rgb(182, 201, 79);
+    color: teal;
+}

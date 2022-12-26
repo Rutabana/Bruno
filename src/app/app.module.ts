@@ -5,14 +5,17 @@ import { AppComponent } from './app.component';
 import { CardModule } from './card/card.module';
 import { AlertModule } from "ngx-bootstrap/alert";
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { FormsModule } from '@angular/forms';
+import { TodoComponent } from './todo/todo.component';
 
 @NgModule({
-    declarations: [AppComponent, SidebarComponent],
+    declarations: [AppComponent, SidebarComponent, TodoComponent],
     imports: [
         AlertModule.forRoot(), 
         BrowserModule, 
         CardModule, 
         AppRoutingModule,
+        FormsModule
     ],
     bootstrap: [AppComponent],
 })

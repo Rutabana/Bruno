@@ -85,12 +85,12 @@ export class CardComponent implements OnInit {
 
   // Make Card Draggable
   private registerDragElement() {
-    const elmnt = <HTMLDivElement>document.getElementById('card');
-  
+    const elemnt = <HTMLDivElement>document.getElementById('card');
+    
     let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-  
+    
     const dragMouseDown = (e: MouseEvent) => {
-      
+
       e = e || window.event;
       // get the mouse cursor position at startup:
       pos3 = e.clientX;
@@ -109,8 +109,8 @@ export class CardComponent implements OnInit {
       pos3 = e.clientX;
       pos4 = e.clientY;
       // set the element's new position:
-      elmnt.style.top = elmnt.offsetTop - pos2 + 'px';
-      elmnt.style.left = elmnt.offsetLeft - pos1 - 40 + 'px';
+      elemnt.style.top = elemnt.offsetTop - pos2 + 'px';
+      elemnt.style.left = elemnt.offsetLeft - pos1 - 40 + 'px';
     };
   
     const closeDragElement = () => {
@@ -119,7 +119,7 @@ export class CardComponent implements OnInit {
       document.onmousemove = null;
     };
   
-    elmnt.onmousedown = dragMouseDown;
+    elemnt.onmousedown = dragMouseDown;
   }
   
   public allowDrop(ev: DragEvent): void {
