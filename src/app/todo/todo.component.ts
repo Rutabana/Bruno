@@ -1,13 +1,19 @@
 import { Component, OnInit } from '@angular/core';
+import { TodoService } from './todo.service';
 
 @Component({
   selector: 'app-todo',
   templateUrl: './todo.component.html',
   styleUrls: ['./todo.component.css']
 })
+
 export class TodoComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private todoService: TodoService,
+    ) {
+    this.todoService.toggleTodo = this.toggleToDo.bind(this);
+  }
 
   ngOnInit(): void {
     this.registerDragElement();
@@ -65,5 +71,17 @@ export class TodoComponent implements OnInit {
     ev.preventDefault();
     var data = ev?.dataTransfer?.getData("text") || elementId;
     (<HTMLDivElement>ev.target).appendChild(<HTMLDivElement>document.getElementById(data));
+  }
+
+  public toggleToDo(): void {
+    const element = <HTMLDivElement>document.getElementById("todo");
+    const computedStyle = window.getComputedStyle(element);
+    console.log(computedStyle.display);
+    if (element.style.display === "none") {
+      element.style.display = "block";
+    } else {
+      element.style.display = "none";
+    }
+    console.log(computedStyle.display);
   }
 }

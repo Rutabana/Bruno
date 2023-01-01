@@ -29,6 +29,7 @@ li {
 
 li a {
     font-size: 6vh;
+    /* color: teal; */
     color: teal;
     width: 11vw;
     height: 10vh;
@@ -37,17 +38,10 @@ li a {
     transition-duration: 250ms;
 }
 
-li a {
-    color: teal;
-}
-
-li a:not(:hover) {
-    color: teal;
-}
-
 li a:hover {
     color: rgb(214, 234, 145);
 }
+
 li:hover {
     background: teal;
 }
