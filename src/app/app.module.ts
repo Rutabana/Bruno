@@ -7,9 +7,10 @@ import { AlertModule } from "ngx-bootstrap/alert";
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { FormsModule } from '@angular/forms';
 import { TodoComponent } from './todo/todo.component';
+import { NavComponent } from './nav/nav.component';
 
 @NgModule({
-    declarations: [AppComponent, SidebarComponent, TodoComponent],
+    declarations: [AppComponent, SidebarComponent, TodoComponent, NavComponent],
     imports: [
         AlertModule.forRoot(), 
         BrowserModule, 

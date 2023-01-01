@@ -110,7 +110,7 @@ export class CardComponent implements OnInit {
       pos4 = e.clientY;
       // set the element's new position:
       elemnt.style.top = elemnt.offsetTop - pos2 + 'px';
-      elemnt.style.left = elemnt.offsetLeft - pos1 - 40 + 'px';
+      elemnt.style.left = elemnt.offsetLeft - pos1 + 'px';
     };
   
     const closeDragElement = () => {

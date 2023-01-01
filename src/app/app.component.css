@@ -2,6 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+.rubik{
+    font-family: 'Rubik', sans-serif;
+}
+
+.montserrat {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.josephin {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+img {
+    object-fit: cover;
+    object-position: center;
+}
 
 nav {
     display: flex;
@@ -15,25 +31,6 @@ nav {
     display: flex;
 }
 
-.Bruno {
-    font-family: 'Lora', sans-serif;
-    font-weight: 500;
-    font-size: x-large;
-    color: teal;
-}
-
-.toolbar {
-    display: inline;
-    margin: 0px;
-    padding: 0px;
-}
-
-.toolbar-items {
-    font-family: 'Lora', sans-serif;
-    font-weight: 500;
-    font-size: x-large;
-    color: teal;
-}
 
 #sidebar {
     position: absolute;

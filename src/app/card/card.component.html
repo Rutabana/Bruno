@@ -1,64 +1,29 @@
-<div class=" flex flex-col absolute ml-10 whole" id="card">
-    <div class="container ml-75 p-0">
-        <div class="card front-face bg-teal-800 flex-row">
-            <div class="w-3/5">
-                <img class="profile-picture mb-3" src="https://www.denofgeek.com/wp-content/uploads/2020/10/spider-man-into-the-spider-verse-suit.jpeg?resize=1024,577" draggable="false"/>
-                <span>🔥</span><span class="streak">Streak</span>
-            </div>
-            <div class="bg-teal-500 w-2/6 rounded-lg w-50 h-1/2 ml-1" >
-                <p class="rubik font-bold justify-center flex text-teal-700 text-xl">Timer</p>
-                <div class="flex justify-center">
-                    <span class="flex justify-center pt-2 pb-1 text-white rubik">
-                        <input class="time-fields ml-1" type="number" id="minutes-field" (focus)="clearInterval()" onblur="this.minutes=''" [(ngModel)]="s_minutes" min="0" max="59">
-                        <input class="time-fields" type="number" id="seconds-field" (focus)="clearInterval()" onblur="this.seconds=''" [(ngModel)]="s_seconds" min="0" max="59">
-                    </span>
-                    <button class="bg-teal-600 button button-text mt-2 rounded w-1/6 justify-center flex rubik font-bold m-1" (click)="changeTimer()">
-                        <span class="button-text">Ok</span>
-                    </button>
-                </div>
-                <div class="flex mx-1">
-                    <button class="bg-teal-600 button rounded w-40 h-30 justify-center flex rubik font-bold m-1" (click)="resetTimer()">
-                        <span class="button-text">Reset</span>
-                    </button>
-                    <button class="bg-teal-600 button rounded w-40 h-30 justify-center flex rubik font-bold m-1" (click)="pauseTimer()">
-                        <span class="button-text">Pause</span>
-                    </button>
-                </div>
-            </div>
-        <!-- <div>   
-            <div class="card front-face">
-                <div class="flex mb-4">
-                    <img class="profile-picture mr-5" src="https://www.denofgeek.com/wp-content/uploads/2020/10/spider-man-into-the-spider-verse-suit.jpeg?resize=1024,577"/>
-                    <div class="description">
-                        <div class="basic-info">
-                            <p> Loïc Rutabana </p>
-                            <p> 20 </p>
-                            <p> 8/10 </p>
-                        </div>
-                        <div class="trophies">
-                            <img class="trophy" src="https://cdn.worldvectorlogo.com/logos/typescript-2.svg">
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <h1>Bio</h1>
-                    <span class="description">
-                        Junior at Hope College seeking Bachelor of Science in Computer Science with a passions for hands-on, collaborative
-                        computer Science work with an alright personality, a lot of caffeine in his system and no backup plan.<br>
-                        Please hire me:)
-                    </span>
-                </div>
-            </div>
-            <div class="buttons flex">
-                <a href="https://www.linkedin.com/in/lo%C3%AFc-rutabana/" class="LinkedIn button text-decoration-none" target="_blank">in</a>
-                <a href="https://github.com/Rutabana/Bruno" class="GitHub button text-decoration-none" target="_blank">
-                    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968866.png" class="logo"/>
-                </a>
-            </div>
-        </div> -->
+<div class="container ml-75 bg-teal-500p-0" id="card">
+    <div class="card front-face bg flex-row">
+        <div class="w-3/5">
+            <img class="profile-picture mb-3" src="https://www.denofgeek.com/wp-content/uploads/2020/10/spider-man-into-the-spider-verse-suit.jpeg?resize=1024,577" draggable="false"/>
+            <span>🔥</span><span class="streak">Streak</span>
         </div>
-    
-    </div>
-    <!-- <img class="background" src="https://c4.wallpaperflare.com/wallpaper/442/48/995/totoro-art-illust-simple-wallpaper-preview.jpg"/> -->
+        <div class="bg-teal-500 w-2/6 rounded-lg w-50 h-1/2 ml-1" >
+            <p class="rubik font-bold justify-center flex text-teal-700 text-xl">Timer</p>
+            <div class="flex justify-center">
+                <span class="flex justify-center pt-2 pb-1 text-white rubik">
+                    <input class="time-fields ml-1" type="number" id="minutes-field" (focus)="clearInterval()" onblur="this.minutes=''" [(ngModel)]="s_minutes" min="0" max="59">
+                    <input class="time-fields" type="number" id="seconds-field" (focus)="clearInterval()" onblur="this.seconds=''" [(ngModel)]="s_seconds" min="0" max="59">
+                </span>
+                <button class="bg-teal-600 button button-text mt-2 rounded w-1/6 justify-center flex rubik font-bold m-1" (click)="changeTimer()">
+                    <span class="button-text">Ok</span>
+                </button>
+            </div>
+            <div class="flex mx-1">
+                <button class="bg-teal-600 button rounded w-40 h-30 justify-center flex rubik font-bold m-1" (click)="resetTimer()">
+                    <span class="button-text">Reset</span>
+                </button>
+                <button class="bg-teal-600 button rounded w-40 h-30 justify-center flex rubik font-bold m-1" (click)="pauseTimer()">
+                    <span class="button-text">Pause</span>
+                </button>
+            </div>
+        </div>
+    </div>    
 </div>
 <script src="card.component.ts"></script>

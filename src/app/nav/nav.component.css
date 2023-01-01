@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    overscroll-behavior-block:contain;
+}
+
+.Bruno {
+    font-family: 'Lora', sans-serif;
+    font-weight: 500;
+    font-size: x-large;
+    color: teal;
+}
+
+ul {
+    display: inline;
+    margin: 0px;
+    padding: 0px;
+}
+
+li {
+    display: inline;
+    margin: 0px 20px 0px 0px;
+    background: rgb(244, 255, 223, 1);
+    transition-duration: 250ms;
+}
+
+
+li a {
+    font-size: 6vh;
+    color: teal;
+    width: 11vw;
+    height: 10vh;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 800;
+    transition-duration: 250ms;
+}
+
+li a {
+    color: teal;
+}
+
+li a:not(:hover) {
+    color: teal;
+}
+
+li a:hover {
+    color: rgb(214, 234, 145);
+}
+li:hover {
+    background: teal;
+}
