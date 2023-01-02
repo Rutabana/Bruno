@@ -8,9 +8,10 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { FormsModule } from '@angular/forms';
 import { TodoComponent } from './todo/todo.component';
 import { NavComponent } from './nav/nav.component';
+import { QuotesComponent } from './quotes/quotes.component';
 
 @NgModule({
-    declarations: [AppComponent, SidebarComponent, TodoComponent, NavComponent],
+    declarations: [AppComponent, SidebarComponent, TodoComponent, NavComponent, QuotesComponent],
     imports: [
         AlertModule.forRoot(), 
         BrowserModule, 

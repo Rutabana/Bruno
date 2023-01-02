@@ -22,7 +22,7 @@ ul {
 li {
     display: inline;
     margin: 0px 20px 0px 0px;
-    background: rgb(244, 255, 223, 1);
+    background: rgb(89, 88, 88); /* Try rgb(214, 234, 145) or rgb(244, 255, 223, 1) */
     transition-duration: 250ms;
 }
 

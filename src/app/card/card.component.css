@@ -23,7 +23,7 @@
 }
 
 .container {
-    display: none;
+    display: flex;
     justify-content: end;
     right: 0vw;
     top: 2vh;
