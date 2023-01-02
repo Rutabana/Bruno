@@ -25,15 +25,12 @@
 .container {
     display: flex;
     justify-content: end;
-    right: 0vw;
-    top: 2vh;
     position: absolute;
     padding: 0;
     margin: 0;
-    width: 30vw;
-    height: 30vh;
-    min-width: 25rem;
-    min-height: 25rem;
+    width: 24rem;
+    height: 25rem;
+    transform: translate(48vw, -10vh)
 }
 
 .card {
