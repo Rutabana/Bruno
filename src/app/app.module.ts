@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { TodoComponent } from './todo/todo.component';
 import { NavComponent } from './nav/nav.component';
 import { QuotesComponent } from './quotes/quotes.component';
+import { Quotes } from './quotes/quotes';
 
 @NgModule({
     declarations: [AppComponent, SidebarComponent, TodoComponent, NavComponent, QuotesComponent],
@@ -20,5 +21,9 @@ import { QuotesComponent } from './quotes/quotes.component';
         FormsModule
     ],
     bootstrap: [AppComponent],
+    providers: [
+        Quotes,
+        QuotesComponent,
+    ]
 })
 export class AppModule {}
