@@ -8,6 +8,7 @@ import { TodoService } from './todo.service';
 })
 
 export class TodoComponent implements OnInit {
+  number = 0;
 
   constructor(
     private todoService: TodoService,
@@ -83,5 +84,29 @@ export class TodoComponent implements OnInit {
       element.style.display = "none";
     }
     console.log(computedStyle.display);
+  }
+
+  public addTask(): void {
+    this.number++;
+
+    const section = document.getElementById("tasks");
+
+    //Creating  elements to later append
+    var task = document.createElement("label");
+    task.classList.add("task-container");
+    // task.setAttribute("transform", "translate(0px, " + this.number * 30 + "px)"); 
+
+    var checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    var checkmark = document.createElement("span");
+    checkmark.className = "checkmark"; //checkbox.classList.add("checknark")
+    var text = document.createElement("input");
+    text.type = "text";
+
+    task.appendChild(checkbox);
+    task.appendChild(checkmark);
+    task.appendChild(text);
+
+    section?.appendChild(task);
   }
 }

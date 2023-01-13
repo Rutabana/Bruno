@@ -6,13 +6,6 @@
     overscroll-behavior-block:contain;
 }
 
-.Bruno {
-    font-family: 'Lora', sans-serif;
-    font-weight: 500;
-    font-size: x-large;
-    color: teal;
-}
-
 ul {
     display: inline;
     margin: 0px;
@@ -31,12 +24,15 @@ li a {
     font-size: 6vh;
     /* color: teal; */
     color: teal;
-    width: 11vw;
-    height: 10vh;
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 800;
     transition-duration: 250ms;
 }
+@media screen and (min-width: 1600px) {
+    li a {
+       font-size: 60px;
+    }
+  }
 
 li a:hover {
     color: rgb(214, 234, 145);

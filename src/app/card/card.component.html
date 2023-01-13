@@ -1,4 +1,4 @@
-<div class="container ml-75 bg-teal-500p-0" id="card">
+<!-- <div class="container ml-75 p-0" id="card">
     <div class="card front-face bg flex-row">
         <div class="w-3/5">
             <img class="profile-picture mb-3" src="https://www.denofgeek.com/wp-content/uploads/2020/10/spider-man-into-the-spider-verse-suit.jpeg?resize=1024,577" draggable="false"/>
@@ -25,5 +25,33 @@
             </div>
         </div>
     </div>    
+</div> -->
+<div class="container" id="card">
+    <div>
+        <img class="profile-picture mb-3" src="https://www.denofgeek.com/wp-content/uploads/2020/10/spider-man-into-the-spider-verse-suit.jpeg?resize=1024,577" draggable="false"/>
+    </div>
+    <div class="timer">
+        <div>
+            <span class="flex justify-center pt-4 pr-2">
+                <input class="time-fields" type="number" id="minutes-field" (focus)="clearInterval()" onblur="this.minutes=''" (focusout)="changeTimer()" [(ngModel)]="s_minutes" min="0" max="59">
+                <span class="text-teal-700 text-xl pt-2">:</span>
+                <input class="time-fields" type="number" id="seconds-field" (focus)="clearInterval()" onblur="this.seconds=''" (focusout)="changeTimer()" [(ngModel)]="s_seconds" min="0" max="59">
+            </span>
+        </div>
+        <div>
+            <span class="flex justify-center">
+                <button class="button w-16 h-8 mt-1" (click)="resetTimer()">
+                    <span class="button-text">RESET</span>
+                </button>
+                <button class="button w-16 h-8 mt-1 ml-1" (click)="pauseTimer()">
+                    <span class="button-text">PAUSE</span>
+                </button>
+                <button class="button flex rubik font-bold w-8 h-8 mt-1 ml-1" (click)="changeTimer()">
+                    <span class="button-text">OK</span>
+                </button>
+            </span>
+        </div>
+    </div>
+    
 </div>
 <script src="card.component.ts"></script>
