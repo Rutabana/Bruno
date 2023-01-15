@@ -4,7 +4,7 @@ import { TodoService } from './todo.service';
 @Component({
   selector: 'app-todo',
   templateUrl: './todo.component.html',
-  styleUrls: ['./todo.component.css']
+  styleUrls: ['./todo.component.css'],
 })
 
 export class TodoComponent implements OnInit {
@@ -108,5 +108,7 @@ export class TodoComponent implements OnInit {
     task.appendChild(text);
 
     section?.appendChild(task);
+
+    // $compile(section.contents())($scope);
   }
 }
