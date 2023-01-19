@@ -1,12 +1,17 @@
 <div class="container" id="todo">
     <section class="title josephin">TO DO</section>
-        <div id="tasks">
-            <label class="task-container">
-                <input type="checkbox" checked="checked">
-                <span class="checkmark"></span>
-                <input type="text" placeholder="Enter Task">
-                <p>Place holder text not working :(</p>
-            </label>
-        </div>
-    <div class="add" (click)="this.addTask()" id="+">+ To Do</div>
+    <div id="tasks">
+        <label class="task-container">
+            <input type="checkbox" checked="checked">
+            <span class="checkmark"></span>
+            <input type="text" placeholder="Enter Task">
+            <!-- <p>Place holder text not working :(</p> -->
+        </label>
+        <!-- <label *ngFor="let task of tasks" class="task-container">
+            <input type="checkbox" checked="checked">
+            <span class="checkmark"></span>
+            <input type="text" placeholder="Enter Task">
+        </label> -->
+    </div>
+    <div class="add" (click)="this.addTask()" id="+">+</div>
 </div>

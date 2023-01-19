@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 import { TodoService } from './todo.service';
 
 @Component({
@@ -9,9 +9,11 @@ import { TodoService } from './todo.service';
 
 export class TodoComponent implements OnInit {
   number = 0;
+  public tasks = ["Enter Task"];
 
   constructor(
     private todoService: TodoService,
+    private renderer: Renderer2,
     ) {
     this.todoService.toggleTodo = this.toggleToDo.bind(this);
   }
@@ -88,27 +90,28 @@ export class TodoComponent implements OnInit {
 
   public addTask(): void {
     this.number++;
+    // this.tasks[this.tasks.length - 1] = "something";
 
     const section = document.getElementById("tasks");
 
     //Creating  elements to later append
-    var task = document.createElement("label");
-    task.classList.add("task-container");
-    // task.setAttribute("transform", "translate(0px, " + this.number * 30 + "px)"); 
+    var task = this.renderer.createElement("label");
+    this.renderer.addClass(task, "task-container");
 
-    var checkbox = document.createElement("input");
-    checkbox.type = "checkbox";
-    var checkmark = document.createElement("span");
-    checkmark.className = "checkmark"; //checkbox.classList.add("checknark")
-    var text = document.createElement("input");
-    text.type = "text";
+    // Applying CSS
+    var checkbox = this.renderer.createElement("input");
+    this.renderer.setAttribute(checkbox, 'type', 'checkbox');
+    var checkmark = this.renderer.createElement("span");
+    this.renderer.addClass(checkmark, "checkmark");
+    var text = this.renderer.createElement("input");
+    this.renderer.setAttribute(text, 'type', 'text');
+    this.renderer.setAttribute(text, "placeholder", "Enter Task");
 
-    task.appendChild(checkbox);
-    task.appendChild(checkmark);
-    task.appendChild(text);
+    // Appending
+    this.renderer.appendChild(task, checkbox);
+    this.renderer.appendChild(task, checkmark);
+    this.renderer.appendChild(task, text);
 
     section?.appendChild(task);
-
-    // $compile(section.contents())($scope);
   }
 }

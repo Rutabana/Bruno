@@ -11,7 +11,7 @@ import { FormsModule } from '@angular/forms';
   providers: [CardService],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
   ],
   exports: [CardComponent],
 })

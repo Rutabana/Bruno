@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CardService } from './card.service';
+import { Quotes } from '../quotes/quotes';
 
 @Component({
   selector: 'app-card',
@@ -8,7 +9,11 @@ import { CardService } from './card.service';
 })
 export class CardComponent implements OnInit {
 
-  constructor(private cardService: CardService) { }
+  constructor(
+    private cardService: CardService,
+    private quotes: Quotes
+  ) { }
+
   minutes = 30;
   seconds = 0;
   s_minutes = ("0" + this.minutes).slice(-2);
@@ -18,9 +23,12 @@ export class CardComponent implements OnInit {
   user_minutes = 0;
   user_seconds = 0;
 
+  quote = this.quotes.quotes[0];
+
   ngOnInit(): void {
     this.startTimer();
     this.registerDragElement();
+    this.randomizeQuote();
   }
 
   startTimer(minutes = this.minutes, seconds = this.seconds) {
@@ -81,6 +89,10 @@ export class CardComponent implements OnInit {
       this.play = false;
     }
     clearInterval(this.interval);
+  }
+
+  public randomizeQuote(): void {
+    this.quote = this.quotes.randomizeQuote();
   }
 
   // Make Card Draggable

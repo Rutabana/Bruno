@@ -15,7 +15,7 @@ ul {
 li {
     display: inline;
     margin: 0px 20px 0px 0px;
-    background: rgb(89, 88, 88); /* Try rgb(214, 234, 145) or rgb(244, 255, 223, 1) */
+    background: black; /* Try rgb(214, 234, 145) or rgb(244, 255, 223, 1) */
     transition-duration: 250ms;
 }
 
@@ -23,7 +23,7 @@ li {
 li a {
     font-size: 6vh;
     /* color: teal; */
-    color: teal;
+    color: #fdca40;
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 800;
     transition-duration: 250ms;
@@ -35,9 +35,9 @@ li a {
   }
 
 li a:hover {
-    color: rgb(214, 234, 145);
+    color: black;
 }
 
 li:hover {
-    background: teal;
+    background: #fdca40;
 }

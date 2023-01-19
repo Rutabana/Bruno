@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+p {
+  color: white; /*#fdca40*/
+}
+
 .rubik{
     font-family: 'Rubik', sans-serif;
 }
@@ -15,20 +19,22 @@
 }
 
 .container {
-    /* top: 50vh; */
     display: block;
-    background: rgb(214, 234, 145);
-    border-radius: 10px;
+    backdrop-filter: blur(20px);
     position: absolute;
-    padding: 0;
-    margin: 0% 5% 5% 0%;
-    width: 20vw;
-    height: 50vh;
-    max-width: 300px;
-    max-height: 400px;
-    padding: 1% 2% 2% 2%;
+    margin: 0;
+    width: 12vw;
+    height: 30vh;
+    min-width: 200px;
+    min-height: 300px;
+    padding: 1% 1% 2% 1%;
     overflow: hidden;
-    transform: translate(55vw, 30vh);
+    border-width: 2px;
+    border-color: #fdca40;
+    border-radius: 10px;
+    right: 3vw;
+    bottom: 7vh;
+    cursor: pointer;
 }
 
 .title {
@@ -36,25 +42,32 @@
     text-align: center;
     margin: 2% 3% 3% 3%;
     font-weight: 800;
-    color: teal;
+    color: #fdca40; /*teal*/
     display: block;
 }
 
 .add {
-    width: 100%;
-    color: grey;
-    text-align: left;
-    padding: 0px 2px 2px 4px;
-    background-color: rgb(162, 176, 113);
-    border-radius: 4px;
+    position: absolute;
+    width: calc(100% - 1vw);
+    left: 0;
+    bottom: 1vh;
+    text-align: center;
+    padding: 0px 0px 2px 0px;
+    background-color: black;
     cursor: pointer;
+    border-width: 2px;
+    color: #fdca40;
+    border-color: #fdca40;
+    border-radius: 10px;
+    font-weight: 700;
+    transform: translate( 0.5vw, 0);
     transition-duration: 250ms;
     transition-timing-function: ease-out;
 }
 
 .add:hover {
-    background-color: rgb(182, 201, 79);
-    color: teal;
+    background-color: #fdca40;
+    color: black;
 }
 
 /* The container */
@@ -68,18 +81,28 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    cursor: text;
+    overflow: hidden;
   }
   
   /* Hide the browser's default checkbox */
-  .container input {
+  .container input[type='checkbox'] {
     position: absolute;
     opacity: 0;
     cursor: pointer;
     height: 0;
     width: 0;
-    color: gray;
+    color: white;
     font-family: 'Rubik', sans-serif;
   }
+
+  .task-container input[type='text'] {
+    background-color: transparent;
+    color: white;
+    border-color: transparent;
+    border-width: 0;
+    white-space: pre-wrap;
+}
 
   .container p {
     font-family: 'Rubik', sans-serif;
@@ -95,9 +118,9 @@
     background-color: rgb(175, 181, 143);
   }
   
-  /* When the checkbox is checked, add a blue background */
+  /* When the checkbox is checked, add a yellow background */
   .container input:checked ~ .checkmark {
-    background-color: teal; /*#2196F3*/
+    background-color: #fdca40; /*#2196F3*/
   }
   
   /* Create the checkmark/indicator (hidden when not checked) */
@@ -123,4 +146,9 @@
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
+  }
+
+  .task-container input[type='checkbox']:checked ~ input[type='text'] {
+    text-decoration: line-through;
+    color: gray;
   }
