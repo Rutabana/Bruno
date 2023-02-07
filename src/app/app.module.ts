@@ -10,15 +10,17 @@ import { TodoComponent } from './todo/todo.component';
 import { NavComponent } from './nav/nav.component';
 import { QuotesComponent } from './quotes/quotes.component';
 import { Quotes } from './quotes/quotes';
+import { ZoomComponent } from './zoom/zoom.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
-    declarations: [AppComponent, SidebarComponent, TodoComponent, NavComponent, QuotesComponent],
+    declarations: [AppComponent, SidebarComponent, TodoComponent, NavComponent, QuotesComponent, ZoomComponent, HomeComponent],
     imports: [
         AlertModule.forRoot(), 
         BrowserModule, 
         CardModule, 
         AppRoutingModule,
-        FormsModule
+        FormsModule,
     ],
     bootstrap: [AppComponent],
     providers: [

@@ -15,6 +15,10 @@
     font-family: 'Josefin Sans', sans-serif;
 }
 
+.roboto-mono {
+    font-family: 'Roboto Mono', monospace;
+}
+
 .whole {
     top: 2vh;
     min-width: 25vw;
@@ -103,10 +107,6 @@
     height: 50%;
 }
 
-.montserrat {
-    font-family: 'Montserrat', sans-serif;
-}
-
 .buttons {
     display: flex;
     align-items: end;
@@ -138,7 +138,8 @@
     text-align: center;
     color: #fdca40;
     font-size:xx-large;
-    font-family: 'Rubik', sans-serif;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 700;
 }
 
 .colon {
