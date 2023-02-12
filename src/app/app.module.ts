@@ -5,13 +5,13 @@ import { AppComponent } from './app.component';
 import { CardModule } from './card/card.module';
 import { AlertModule } from "ngx-bootstrap/alert";
 import { SidebarComponent } from './sidebar/sidebar.component';
-import { FormsModule } from '@angular/forms';
 import { TodoComponent } from './todo/todo.component';
 import { NavComponent } from './nav/nav.component';
 import { QuotesComponent } from './quotes/quotes.component';
 import { Quotes } from './quotes/quotes';
 import { ZoomComponent } from './zoom/zoom.component';
 import { HomeComponent } from './home/home.component';
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
     declarations: [AppComponent, SidebarComponent, TodoComponent, NavComponent, QuotesComponent, ZoomComponent, HomeComponent],
@@ -20,7 +20,7 @@ import { HomeComponent } from './home/home.component';
         BrowserModule, 
         CardModule, 
         AppRoutingModule,
-        FormsModule,
+        AuthModule
     ],
     bootstrap: [AppComponent],
     providers: [
