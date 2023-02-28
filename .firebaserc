@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "online-portfolio-bruno": {
+      "hosting": {
+        "Bruno": [
+          "online-portfolio-bruno"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "online-portfolio-bruno"
+  }
+}

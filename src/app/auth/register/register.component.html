@@ -1,0 +1,75 @@
+<div id="all">
+
+    <div #first class="light" id="first"></div>
+    <div #second class="light" id="second"></div>
+    <div #third class="light" id="third"></div>
+    <div #fourth class="light" id="fourth"></div>
+
+    
+    <div class="container">
+    <form (ngSumbit)="submit()" #registrationForm="ngForm">
+        
+        <div class="picture_border">
+            <img [src]="this.me" alt="">
+        </div>
+        <h1>Welcome :)</h1>
+
+        <div class="prompt flex flex-col mb-2">
+            <label for="username">Username</label>
+            <input type="username" id="username" class="standard" name="username"
+             (blur)="validateUsername()" [(ngModel)]="form.username" #username="ngModel" required>
+        </div>
+        <div [hidden]="this.blankHidden1" #blank class="text-red-600 font-semibold mb-2 text-center">
+            Field left blank ¯\_(ツ)_/¯
+        </div>
+        <div [hidden]="this.usernameHidden" #invalidUsername class="text-red-600 font-semibold mb-2 text-center">
+            Invalid username
+        </div>
+        
+
+        <div class="prompt flex flex-col mb-2">
+            <label for="email">Email</label>
+            <input type="email" id="email" class="standard" name="email"
+             (blur)="validateEmail()" [(ngModel)]="form.email" #email="ngModel" required>
+        </div>
+        <div [hidden]="this.blankHidden2" #blank class="text-red-600 font-semibold mb-2 text-center">
+            Field left blank ¯\_(ツ)_/¯
+        </div>
+        <div [hidden]="this.emailHidden" #invalidEmail class="text-red-600 font-semibold mb-2 text-center">
+            Invalid email
+        </div>
+
+        <div class="prompt flex flex-col mb-2">
+            <label for="password">Password</label>
+            <input type="password" id="password" class="standard" name="password"
+             (blur)="this.validatePassword()" [(ngModel)]="form.password" #password="ngModel" required>
+        </div>
+        <div [hidden]="this.blankHidden3" #blank class="text-red-600 font-semibold mb-2 text-center">
+            Field left blank ¯\_(ツ)_/¯
+        </div>
+        <div [hidden]="this.passwordHidden" #invalidPassword class="text-red-600 font-semibold mb-2 text-center">
+            Password must have 14+ characters<br>
+            one upper case one lower case and<br>
+            a symbol
+        </div>
+
+        <div class="prompt flex flex-col mb-2">
+            <label for="confirm">Confirm Password</label>
+            <input type="password" id="confirm" class="standard" name="confirm" 
+            (blur)="this.validateConfirm()" [(ngModel)]="form.confirm" #confirm="ngModel" required>
+        </div>
+        <div [hidden]="this.blankHidden4" #blank class="text-red-600 font-semibold mb-2 text-center">
+            Field left blank ¯\_(ツ)_/¯
+        </div>
+        <div [hidden]="this.matchHidden" #match class="text-red-600 font-semibold mb-2 text-center">
+            Passwords don't match
+        </div>
+
+        <button (click)="submit()">Register</button>
+        <div [hidden]="this.invalidForm" class="text-red-600 font-semibold text-center">
+            Invalid Form
+        </div>
+
+    </form>
+</div>
+</div>

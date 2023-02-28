@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container {
+    width: 19.5vw;
+    color: white; /*rgb(244, 255, 223, 1)*/
+    font-weight: 400;
+    /* transform: translate(80vw, -10vh); */
+    font-family: 'Lora', sans-serif;
+}

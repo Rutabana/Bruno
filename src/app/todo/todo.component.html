@@ -1,11 +1,16 @@
 <div class="container" id="todo">
+    <div class="close" (click)="this.toggleToDo()">
+        <img id="1" src="../../assets/img/icons/cross.svg">
+    </div>
     <section class="title josephin">TO DO</section>
     <div id="tasks">
-        <label class="task-container">
-            <input type="checkbox" checked="checked">
+        <label id="1a" class="task-container">
+            <input type="checkbox">
             <span class="checkmark"></span>
-            <input type="text" placeholder="Enter Task">
-            <!-- <p>Place holder text not working :(</p> -->
+            <div class="flex">
+                <input type="text" placeholder="Enter Task">
+                <a (click)="this.removeTask('1')"><img class="icon" id="1" src="../../assets/img/icons/trash.svg"></a>
+            </div>
         </label>
         <!-- <label *ngFor="let task of tasks" class="task-container">
             <input type="checkbox" checked="checked">

@@ -52,6 +52,7 @@ export class CardComponent implements OnInit {
         } else {
           //Time ended so we're resetting
           this.resetTimer();
+          this.ring();
           this.clearInterval();
         }
       }
@@ -91,7 +92,15 @@ export class CardComponent implements OnInit {
     clearInterval(this.interval);
   }
 
-  public randomizeQuote(): void {
+  public ring() {
+    const bell = new Audio();
+    bell.src = "../../../assets/audio/bell.wav";
+    bell.volume = 0.05;
+    bell.load();
+    bell.play();
+  }
+
+  private randomizeQuote(): void {
     this.quote = this.quotes.randomizeQuote();
   }
 
@@ -103,7 +112,7 @@ export class CardComponent implements OnInit {
     
     const dragMouseDown = (e: MouseEvent) => {
 
-      e = e || window.event;
+      e = e || window.event as MouseEvent;
       // get the mouse cursor position at startup:
       pos3 = e.clientX;
       pos4 = e.clientY;
@@ -114,7 +123,7 @@ export class CardComponent implements OnInit {
     };
   
     const elementDrag = (e: MouseEvent) => {
-      e = e || window.event;
+      e = e || window.event as MouseEvent;
       // calculate the new cursor position:
       pos1 = pos3 - e.clientX;
       pos2 = pos4 - e.clientY;

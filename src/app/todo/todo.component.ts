@@ -9,7 +9,7 @@ import { TodoService } from './todo.service';
 
 export class TodoComponent implements OnInit {
   number = 0;
-  public tasks = ["Enter Task"];
+  tasks = 1;
 
   constructor(
     private todoService: TodoService,
@@ -31,7 +31,7 @@ export class TodoComponent implements OnInit {
     
     const dragMouseDown = (e: MouseEvent) => {
 
-      e = e || window.event;
+      e = e || window.event as MouseEvent;
       // get the mouse cursor position at startup:
       pos3 = e.clientX;
       pos4 = e.clientY;
@@ -42,7 +42,7 @@ export class TodoComponent implements OnInit {
     };
   
     const elementDrag = (e: MouseEvent) => {
-      e = e || window.event;
+      e = e || window.event as MouseEvent;
       // calculate the new cursor position:
       pos1 = pos3 - e.clientX;
       pos2 = pos4 - e.clientY;
@@ -89,7 +89,9 @@ export class TodoComponent implements OnInit {
   }
 
   public addTask(): void {
+    if (this.tasks == 9) return;
     this.number++;
+    this.tasks++;
     // this.tasks[this.tasks.length - 1] = "something";
 
     const section = document.getElementById("tasks");
@@ -97,21 +99,37 @@ export class TodoComponent implements OnInit {
     //Creating  elements to later append
     var task = this.renderer.createElement("label");
     this.renderer.addClass(task, "task-container");
+    this.renderer.setAttribute(task, 'id', `${(this.tasks)}a`);
 
     // Applying CSS
     var checkbox = this.renderer.createElement("input");
     this.renderer.setAttribute(checkbox, 'type', 'checkbox');
     var checkmark = this.renderer.createElement("span");
     this.renderer.addClass(checkmark, "checkmark");
+    var div = this.renderer.createElement("div");
+    this.renderer.addClass(div, 'flex');
     var text = this.renderer.createElement("input");
     this.renderer.setAttribute(text, 'type', 'text');
     this.renderer.setAttribute(text, "placeholder", "Enter Task");
+    var del = this.renderer.createElement("img");
+    this.renderer.addClass(del, 'icon');
+    this.renderer.setAttribute(del, 'src', '../../assets/img/icons/trash.svg');
+    this.renderer.setAttribute(del, 'id', `${this.tasks}`);
+    var id = this.tasks;
+    this.renderer.listen(del, 'click', (event) => this.removeTask(`${id}`));
 
     // Appending
     this.renderer.appendChild(task, checkbox);
     this.renderer.appendChild(task, checkmark);
-    this.renderer.appendChild(task, text);
+    this.renderer.appendChild(task, div)
+    this.renderer.appendChild(div, text);
+    this.renderer.appendChild(div, del);
 
     section?.appendChild(task);
+  }
+
+  public removeTask(id: string): void {
+    const label = document.getElementById(`${id}a`);
+    this.renderer.removeChild(label.parentElement, label);
   }
 }

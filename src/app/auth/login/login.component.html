@@ -1,0 +1,34 @@
+<div id="all">
+
+    <div #first class="light" id="first"></div>
+    <div #second class="light" id="second"></div>
+    <div #third class="light" id="third"></div>
+    <div #fourth class="light" id="fourth"></div>
+
+    
+    <div class="container">
+    <form (ngSubmit)="login()">
+        
+        <div class="picture_border">
+            <img [src]="this.me" alt="">
+        </div>
+        <h1>Hi Again ;)</h1>
+
+        <div class="prompt flex flex-col mb-2">
+            <label for="email">Email</label>
+            <input type="email" id="email" class="standard" [(ngModel)]="form.email" name="email" #email="ngModel" required>
+        </div>
+        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="text-red-600 font-semibold mb-2">
+            Invalid Email
+        </div>
+
+        <div class="prompt flex flex-col mb-2">
+            <label for="password">Password</label>
+            <input type="password" id="password" class="standard" [(ngModel)]="form.password" name="password" #password="ngModel" required>
+        </div>
+        
+
+        <button (click)="login()">Log in</button>
+    </form>
+</div>
+</div>

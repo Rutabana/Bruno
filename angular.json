@@ -95,6 +95,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "Bruno:build:production",
+            "firebaseProject": "online-portfolio-bruno",
+            "firebaseHostingSite": "online-portfolio-bruno"
+          }
         }
       }
     }
