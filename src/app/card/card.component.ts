@@ -95,7 +95,7 @@ export class CardComponent implements OnInit {
   public ring() {
     const bell = new Audio();
     bell.src = "../../../assets/audio/bell.wav";
-    bell.volume = 0.05;
+    bell.volume = 0.1;
     bell.load();
     bell.play();
   }

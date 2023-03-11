@@ -8,7 +8,7 @@
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 export const firebaseConfig = {
   apiKey: "AIzaSyAlYsgycdrL6vTk4X3uSz5ZzXjViiLKq-o",
-  authDomain: "online-portfolio-bruno.firebaseapp.com",
+  authDomain: "flowtostudy.com", //online-portfolio-bruno.firebaseapp.com
   projectId: "online-portfolio-bruno",
   storageBucket: "online-portfolio-bruno.appspot.com",
   messagingSenderId: "139063622442",
