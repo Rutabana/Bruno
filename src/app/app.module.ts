@@ -25,7 +25,14 @@ import { provideRemoteConfig,getRemoteConfig } from '@angular/fire/remote-config
 import { provideStorage,getStorage } from '@angular/fire/storage';
 
 @NgModule({
-    declarations: [AppComponent, SidebarComponent, TodoComponent, NavComponent, QuotesComponent, ZoomComponent, HomeComponent],
+    declarations: [
+        AppComponent,
+        SidebarComponent,
+        TodoComponent,
+        NavComponent,
+        QuotesComponent,
+        ZoomComponent,
+        HomeComponent],
     imports: [
         AlertModule.forRoot(), 
         BrowserModule, 
